@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的公司名称｜专注于XX解决方案</title>
+  <meta name="description" content="你的公司一句话价值主张。面向的客户与核心优势。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    :root{--bg:#0b0c10;--card:#111319;--soft:#181b23;--text:#e9eef7;--muted:#9aa4b2;--brand:#5b8cff;--accent:#22c55e}
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:linear-gradient(180deg,#0b0c10,#0e1117)}
+    a{color:var(--brand); text-decoration:none}
+    .container{max-width:1120px; margin:0 auto; padding:0 20px}
+    .btn{display:inline-block; padding:12px 18px; border-radius:12px; background:var(--brand); color:white; font-weight:600}
+    .btn.ghost{background:transparent; border:1px solid #2b2f37}
+    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:#121826; color:#9fb3c8; font-size:12px; border:1px solid #212734}
+    header{position:sticky; top:0; backdrop-filter:blur(10px); background:rgba(10,12,16,.6); border-bottom:1px solid #1b1f2a; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
+    .nav a{color:var(--text); opacity:.9; margin:0 10px}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo i{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--brand),#9b8cff)}
+    .hero{padding:72px 0 48px; text-align:center}
+    .hero h1{font-size:40px; line-height:1.2; margin:14px 0}
+    .hero p{color:var(--muted); font-size:18px; margin:10px 0 26px}
+    .hero .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .grid{display:grid; gap:18px}
+    .cards{grid-template-columns:repeat(12,1fr)}
+    .card{background:var(--card); border:1px solid #1c2130; border-radius:20px; padding:20px}
+    .card h3{margin:8px 0 6px; font-size:18px}
+    .muted{color:var(--muted)}
+    section{padding:40px 0}
+    .two-col{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center}
+    .pill{display:flex; align-items:center; gap:8px}
+    .list{display:grid; gap:10px}
+    .list li{background:var(--soft); border:1px solid #22283a; padding:12px 14px; border-radius:12px}
+    .cta{background:radial-gradient(1200px 400px at 50% -50%, rgba(91,140,255,.25), transparent), var(--soft); border:1px solid #1c2130; border-radius:20px; padding:28px; text-align:center}
+    footer{border-top:1px solid #1b1f2a; padding:28px 0; color:#9aa4b2}
+    /* responsive */
+    @media (max-width: 960px){
+      .two-col{grid-template-columns:1fr;}
+    }
+  </style>
+  <script>
+    // 简易移动端菜单
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      m.style.display = m.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><i></i><span>你的公司名称</span></div>
+      <nav class="desktop" style="display:flex; align-items:center; gap:6px">
+        <a href="#services">服务</a>
+        <a href="#cases">案例</a>
+        <a href="#about">关于我们</a>
+        <a href="#contact">联系</a>
+        <a class="btn" href="#contact">获取报价</a>
+      </nav>
+      <button onclick="toggleMenu()" aria-label="menu" style="background:none;border:0;color:var(--text);display:none" id="menubtn">☰</button>
+    </div>
+    <nav id="menu" class="container" style="display:none; padding-bottom:12px">
+      <a href="#services">服务</a> · <a href="#cases">案例</a> · <a href="#about">关于</a> · <a href="#contact">联系</a>
+    </nav>
+    <script>
+      // 小屏显示菜单按钮
+      const mq = window.matchMedia('(max-width: 800px)');
+      function handle(e){
+        document.getElementById('menubtn').style.display = e.matches ? 'block' : 'none';
+        document.getElementById('menu').style.display = 'none';
+      }
+      handle(mq); mq.addEventListener('change', handle);
+    </script>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <span class="badge">企业官网模板 · 可直接上线</span>
+      <h1>用<span style="background:linear-gradient(90deg,#5b8cff,#22c55e);-webkit-background-clip:text;color:transparent">专业方案</span>解决你的客户痛点</h1>
+      <p>一句话价值主张：我们为 <strong>行业/人群</strong> 提供 <strong>核心服务</strong>，以 <strong>数据/案例</strong> 证明成效。</p>
+      <div class="actions">
+        <a class="btn" href="#contact">预约咨询</a>
+        <a class="btn ghost" href="#cases">查看成功案例</a>
+      </div>
+    </section>
+
+    <!-- 服务 -->
+    <section id="services" class="container">
+      <h2 style="margin-bottom:12px">我们的服务</h2>
+      <div class="grid cards">
+        <div class="card" style="grid-column: span 4">
+          <div class="pill"><span>①</span><strong>服务A</strong></div>
+          <h3>一句话说明价值</h3>
+          <p class="muted">你为客户解决什么问题，最终带来什么结果。</p>
+        </div>
+        <div class="card" style="grid-column: span 4">
+          <div class="pill"><span>②</span><strong>服务B</strong></div>
+          <h3>一句话说明价值</h3>
+          <p class="muted">可加交付物、时长、可选套餐。</p>
+        </div>
+        <div class="card" style="grid-column: span 4">
+          <div class="pill"><span>③</span><strong>服务C</strong></div>
+          <h3>一句话说明价值</h3>
+          <p class="muted">强调差异化与可量化指标。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 亮点/优势 -->
+    <section class="container two-col">
+      <div class="card">
+        <h2>为什么选择我们</h2>
+        <ul class="list">
+          <li>行业经验 X 年，覆盖 XX 细分领域</li>
+          <li>项目交付周期可控，满意度 ≥ 98%</li>
+          <li>合规与数据安全：符合 GDPR / ISO 规范</li>
+          <li>提供从咨询到落地的一站式服务</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>关键数据</h2>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:12px">
+          <div class="card" style="text-align:center">
+            <div style="font-size:28px; font-weight:800">120+</div>
+            <div class="muted">企业客户</div>
+          </div>
+          <div class="card" style="text-align:center">
+            <div style="font-size:28px; font-weight:800">98%</div>
+            <div class="muted">项目满意度</div>
+          </div>
+          <div class="card" style="text-align:center">
+            <div style="font-size:28px; font-weight:800">7天</div>
+            <div class="muted">最快交付</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 案例 -->
+    <section id="cases" class="container">
+      <h2 style="margin-bottom:12px">客户案例</h2>
+      <div class="grid cards">
+        <article class="card" style="grid-column:span 6">
+          <h3>案例一：为某制造企业提升良率</h3>
+          <p class="muted">问题 → 方案 → 结果 三行概述；可放一张 1200×630 封面图。</p>
+          <a href="#" class="btn ghost">查看详情</a>
+        </article>
+        <article class="card" style="grid-column:span 6">
+          <h3>案例二：为某汽车企业优化能耗</h3>
+          <p class="muted">突出可量化成果（例如能耗降低 12%，产能+20%）。</p>
+          <a href="#" class="btn ghost">查看详情</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="container two-col">
+      <div>
+        <h2>关于我们</h2>
+        <p class="muted">写你的使命、愿景、团队情况与资质。也可放里程碑时间轴与合作伙伴 Logo。</p>
+        <div class="grid" style="grid-template-columns:repeat(2,1fr); gap:12px; margin-top:8px">
+          <div class="card"><strong>成立年份</strong><br><span class="muted">2020</span></div>
+          <div class="card"><strong>总部</strong><br><span class="muted">城市 · 国家/地区</span></div>
+          <div class="card"><strong>业务范围</strong><br><span class="muted">欧洲 / 中国 / 全球</span></div>
+          <div class="card"><strong>资质</strong><br><span class="muted">ISO/奖项/专利等</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>客户评价</h3>
+        <p>“一句客户背书。强调专业、响应速度与交付质量。” — 客户姓名 / 职位</p>
+        <p>“第二条背书。” — 客户姓名 / 公司</p>
+      </div>
+    </section>
+
+    <!-- 联系我们 / 表单 -->
+    <section id="contact" class="container">
+      <div class="cta">
+        <h2>联系我们</h2>
+        <p class="muted">留下需求，我们会在 1 个工作日内回复（示例）。</p>
+        <form action="https://formsubmit.co/your@email.com" method="POST" class="grid" style="grid-template-columns:repeat(2,1fr); gap:12px; text-align:left">
+          <input type="hidden" name="_subject" value="官网咨询" />
+          <input type="hidden" name="_captcha" value="false" />
+          <label>姓名<br><input required name="name" placeholder="张三" style="width:100%; padding:12px; border-radius:12px; border:1px solid #2a3040; background:#0f1218; color:var(--text)"></label>
+          <label>邮箱<br><input required type="email" name="email" placeholder="you@example.com" style="width:100%; padding:12px; border-radius:12px; border:1px solid #2a3040; background:#0f1218; color:var(--text)"></label>
+          <label style="grid-column:1 / -1">需求描述<br><textarea required name="message" rows="5" placeholder="请简单描述你的业务与期望目标…" style="width:100%; padding:12px; border-radius:12px; border:1px solid #2a3040; background:#0f1218; color:var(--text)"></textarea></label>
+          <div style="grid-column:1 / -1; display:flex; align-items:center; gap:12px; justify-content:center">
+            <button class="btn" type="submit">提交咨询</button>
+            <span class="muted" style="font-size:12px">提交即同意<a href="#privacy">隐私政策</a>与<a href="#imprint">法律声明</a></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 底部 CTA -->
+    <section class="container">
+      <div class="card" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px">
+        <div>
+          <h3 style="margin:0">准备好开始了吗？</h3>
+          <p class="muted" style="margin:6px 0 0">告诉我们你的目标，我们给出一份清晰的实施方案。</p>
+        </div>
+        <a class="btn" href="#contact">获取方案</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between">
+      <div>© <span id="y"></span> 你的公司名称 · All rights reserved.</div>
+      <div>
+        <a id="imprint" href="#">Impressum（法律声明）</a>
+        · <a id="privacy" href="#">Datenschutz（隐私政策/GDPR）</a>
+        · <a href="#">Terms</a>
+      </div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
